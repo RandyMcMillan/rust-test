@@ -1,5 +1,5 @@
 fn ownership() {
-    let mut str =String::from("hello");
+    let mut str = String::from("hello");
 
     reference(&str);
     mutable(&mut str);
@@ -9,15 +9,13 @@ fn ownership() {
     let mut mutable = String::from("hi");
     let immutable = mutable.clone();
 //    immutable.push_str("!");
-
-
 }
 
-fn test(str:String) {
+fn test(str: String) {
     println!("test{:?}", str);
 }
 
-fn reference(str:&String) {
+fn reference(str: &String) {
     println!("ref {:?}", str);
 }
 

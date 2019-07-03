@@ -27,12 +27,12 @@ fn main() {
     println!("10. JSON");
     println!("11. Collections");
 
-
     println!("Please input your choice");
 
     let mut choice = String::new();
 
-    io::stdin().read_line(&mut choice)
+    io::stdin()
+        .read_line(&mut choice)
         .expect("Failed to read line");
 
     let choice: u32 = match choice.trim().parse() {

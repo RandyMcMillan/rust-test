@@ -12,7 +12,7 @@ fn fibonacci() {
     fibonacci_n(count)
 }
 
-fn fibonacci_n(n: u32){
+fn fibonacci_n(n: u32) {
     for number in 1..n {
         print!("{} ", fib2(number));
         io::stdout().flush().unwrap();

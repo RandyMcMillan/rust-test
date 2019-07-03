@@ -1,5 +1,4 @@
-
-fn slice(){
+fn slice() {
     let whole_word = String::from("hello world");
 
     let word = first_word(&whole_word);
