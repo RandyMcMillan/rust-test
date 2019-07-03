@@ -1,4 +1,5 @@
 use std::io::Write;
+
 include!("guess.rs");
 include!("variables.rs");
 include!("expressions.rs");
@@ -9,6 +10,7 @@ include!("slice.rs");
 include!("structs_rectangle.rs");
 include!("option.rs");
 include!("json.rs");
+include!("collections.rs");
 
 fn main() {
     println!("Hello world!");
@@ -23,6 +25,7 @@ fn main() {
     println!("8. Structs/Rectangle");
     println!("9. Option");
     println!("10. JSON");
+    println!("11. Collections");
 
 
     println!("Please input your choice");
@@ -48,6 +51,7 @@ fn main() {
         8 => structs_rectangle(),
         9 => option(),
         10 => json(),
+        11 => collections(),
         _ => println!("Invalid option"),
     }
 }
