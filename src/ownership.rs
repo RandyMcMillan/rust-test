@@ -9,6 +9,14 @@ fn ownership() {
     let mut mutable = String::from("hi");
     let immutable = mutable.clone();
 //    immutable.push_str("!");
+
+    let hello = String::from("hi");
+
+    test(hello)
+
+
+
+
 }
 
 fn test(str: String) {

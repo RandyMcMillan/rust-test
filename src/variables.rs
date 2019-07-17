@@ -10,6 +10,10 @@ fn variables() {
     let x = five();
 
     println!("The value of five() is: {}", x);
+
+
+    let hello = 1;
+    let hello = "qweqwe";
 }
 
 fn five() -> i32 {

@@ -1,4 +1,5 @@
 use std::io::Write;
+use std::collections::HashMap;
 
 include!("guess.rs");
 include!("variables.rs");
