@@ -12,6 +12,7 @@ include!("structs_rectangle.rs");
 include!("option.rs");
 include!("json.rs");
 include!("collections.rs");
+include!("traits.rs");
 
 fn main() {
     println!("Hello world!");
@@ -27,6 +28,7 @@ fn main() {
     println!("9. Option");
     println!("10. JSON");
     println!("11. Collections");
+    println!("12. Traits");
 
     println!("Please input your choice");
 
@@ -53,6 +55,7 @@ fn main() {
         9 => option(),
         10 => json(),
         11 => collections(),
+        12 => traits(),
         _ => println!("Invalid option"),
     }
 }
