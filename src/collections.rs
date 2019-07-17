@@ -78,4 +78,32 @@ fn collections() {
         println!("{}: {}", key, value);
     }
 
+    let text = "hello world wonderful world";
+
+    let mut map = HashMap::new();
+
+    for word in text.split_whitespace() {
+        let count = map.entry(word).or_insert(0);
+        *count += 1;
+    }
+
+    println!("{:?}", map);
+
+    collections_copy_ownership();
+}
+
+#[derive(Copy, Clone)]
+struct MyStruct {
+    num: i32
+}
+
+
+fn collections_copy_ownership() {
+    let value = MyStruct { num: 12 };
+
+    let mut map = HashMap::new();
+    // if MyStruct has clone, it's copied otherwise it's borrowed in
+    map.insert("key", value);
+
+    println!("is this usable: {}", value.num);
 }
