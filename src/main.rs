@@ -2,6 +2,7 @@ use std::collections::HashMap;
 use std::io::Write;
 
 use clap::{App, SubCommand};
+use std::iter::Map;
 
 include!("guess.rs");
 include!("variables.rs");
@@ -18,10 +19,34 @@ include!("traits.rs");
 include!("lifetimes.rs");
 include!("testing.rs");
 
+enum Commands {
+    Guess,
+    Variables,
+    Expressions,
+    Loops,
+    Fibonacci,
+    Ownership,
+    Slice,
+    Rectangle,
+    Option,
+    Json,
+    Collections,
+    Traits,
+    Lifetimes,
+    Testing,
+}
+
+
+
+
 fn main() {
+
+
+
     let matches = App::new("rust-test")
         .author("RichoDemus")
         .version("v1.0-beta")
+        .subcommands(commands)
         .subcommand(SubCommand::with_name("guess"))
         .subcommand(SubCommand::with_name("variables"))
         .subcommand(SubCommand::with_name("expressions"))
