@@ -1,3 +1,3 @@
 # Rust
 
-[Where I'm currently](file:///Users/richo/.rustup/toolchains/stable-x86_64-apple-darwin/share/doc/rust/html/book/ch10-03-lifetime-syntax.html)
+[Where I'm currently](file:///Users/rtjerngren/.rustup/toolchains/stable-x86_64-apple-darwin/share/doc/rust/html/book/ch12-00-an-io-project.html)

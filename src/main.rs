@@ -13,6 +13,8 @@ include!("option.rs");
 include!("json.rs");
 include!("collections.rs");
 include!("traits.rs");
+include!("lifetimes.rs");
+include!("testing.rs");
 
 fn main() {
     println!("Hello world!");
@@ -29,6 +31,8 @@ fn main() {
     println!("10. JSON");
     println!("11. Collections");
     println!("12. Traits");
+    println!("13. Lifetimes");
+    println!("14. Testing");
 
     println!("Please input your choice");
 
@@ -56,6 +60,8 @@ fn main() {
         10 => json(),
         11 => collections(),
         12 => traits(),
+        13 => lifetimes(),
+        14 => testing(),
         _ => println!("Invalid option"),
     }
 }
