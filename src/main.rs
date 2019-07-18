@@ -1,5 +1,7 @@
-use std::io::Write;
 use std::collections::HashMap;
+use std::io::Write;
+
+use clap::{App, SubCommand};
 
 include!("guess.rs");
 include!("variables.rs");
@@ -17,51 +19,41 @@ include!("lifetimes.rs");
 include!("testing.rs");
 
 fn main() {
-    println!("Hello world!");
-    println!("Select a program");
-    println!("1. Guess");
-    println!("2. Variables");
-    println!("3. Expressions");
-    println!("4. Loops");
-    println!("5. Fibonacci");
-    println!("6. Ownership");
-    println!("7. Slice");
-    println!("8. Structs/Rectangle");
-    println!("9. Option");
-    println!("10. JSON");
-    println!("11. Collections");
-    println!("12. Traits");
-    println!("13. Lifetimes");
-    println!("14. Testing");
+    let matches = App::new("rust-test")
+        .author("RichoDemus")
+        .version("v1.0-beta")
+        .subcommand(SubCommand::with_name("guess"))
+        .subcommand(SubCommand::with_name("variables"))
+        .subcommand(SubCommand::with_name("expressions"))
+        .subcommand(SubCommand::with_name("loops"))
+        .subcommand(SubCommand::with_name("fibonacci"))
+        .subcommand(SubCommand::with_name("ownership"))
+        .subcommand(SubCommand::with_name("slice"))
+        .subcommand(SubCommand::with_name("rectangle"))
+        .subcommand(SubCommand::with_name("option"))
+        .subcommand(SubCommand::with_name("json"))
+        .subcommand(SubCommand::with_name("collections"))
+        .subcommand(SubCommand::with_name("traits"))
+        .subcommand(SubCommand::with_name("lifetimes"))
+        .subcommand(SubCommand::with_name("testing"))
+        .get_matches();
 
-    println!("Please input your choice");
 
-    let mut choice = String::new();
-
-    io::stdin()
-        .read_line(&mut choice)
-        .expect("Failed to read line");
-
-    let choice: u32 = match choice.trim().parse() {
-        Ok(num) => num,
-        Err(_) => panic!("Invalid option"),
+    match matches.subcommand() {
+        ("guess", Some(_)) => guess(),
+        ("variables", Some(_)) => variables(),
+        ("expressions", Some(_)) => expressions(),
+        ("loops", Some(_)) => loops(),
+        ("fibonacci", Some(_)) => fibonacci(),
+        ("ownership", Some(_)) => ownership(),
+        ("slice", Some(_)) => slice(),
+        ("rectangle", Some(_)) => structs_rectangle(),
+        ("option", Some(_)) => option(),
+        ("json", Some(_)) => json(),
+        ("collections", Some(_)) => collections(),
+        ("traits", Some(_)) => traits(),
+        ("lifetimes", Some(_)) => lifetimes(),
+        ("testing", Some(_)) => testing(),
+        _ => panic!("Invalid option")
     };
-
-    match choice {
-        1 => guess(),
-        2 => variables(),
-        3 => expressions(),
-        4 => loops(),
-        5 => fibonacci(),
-        6 => ownership(),
-        7 => slice(),
-        8 => structs_rectangle(),
-        9 => option(),
-        10 => json(),
-        11 => collections(),
-        12 => traits(),
-        13 => lifetimes(),
-        14 => testing(),
-        _ => println!("Invalid option"),
-    }
 }
