@@ -19,4 +19,15 @@ fn option() {
     if let Some(3) = some_u8_value {
         println!("three");
     }
+
+    let res = play_with_question_mark();
+}
+
+fn play_with_question_mark() -> Result<String, String> {
+    let res: Result<String, String> = Err("faaaail".to_string());
+
+    // either unwrap or return the error
+    let unwrap = res?;
+
+    Ok(unwrap)
 }
