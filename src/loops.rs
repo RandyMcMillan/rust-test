@@ -1,4 +1,4 @@
-fn loops() {
+pub(crate) fn loops() {
     let mut counter = 0;
 
     let result = loop {

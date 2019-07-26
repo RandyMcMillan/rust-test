@@ -1,4 +1,6 @@
-fn collections() {
+use std::collections::HashMap;
+
+pub(crate) fn collections() {
     let ints: Vec<i32> = Vec::new();
     let one_two_three = vec![1, 2, 3];
 

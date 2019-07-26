@@ -53,7 +53,7 @@ fn combined_types(tweet: impl Summary + Characters) {
     println!("Tweet of {} chars: {}", tweet.characters(), tweet.summarize());
 }
 
-fn traits() {
+pub(crate) fn traits() {
     let tweet = Tweet {
         username: "Richo".to_string(),
         content: "Hello World".to_string(),

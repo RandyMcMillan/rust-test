@@ -1,4 +1,4 @@
-fn expressions() {
+pub(crate) fn expressions() {
     let number = 3;
 
     if number < 5 {

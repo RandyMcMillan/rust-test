@@ -1,4 +1,4 @@
-fn testing() {
+pub(crate) fn testing() {
     println!("hello there");
 }
 

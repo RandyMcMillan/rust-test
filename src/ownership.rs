@@ -1,4 +1,4 @@
-fn ownership() {
+pub(crate) fn ownership() {
     let mut str = String::from("hello");
 
     reference(&str);
@@ -13,10 +13,6 @@ fn ownership() {
     let hello = String::from("hi");
 
     test(hello)
-
-
-
-
 }
 
 fn test(str: String) {

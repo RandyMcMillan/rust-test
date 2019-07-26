@@ -1,4 +1,4 @@
-fn lifetimes() {
+pub(crate) fn lifetimes() {
     let string1 = String::from("long string is long");
 
     {

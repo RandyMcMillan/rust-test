@@ -1,4 +1,4 @@
-fn json() {
+pub(crate) fn json() {
     println!("json stuff");
 
 //    untyped_example();

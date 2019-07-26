@@ -1,4 +1,4 @@
-fn option() {
+pub(crate) fn option() {
     let opt = Some("hello");
 
     let unwrapped = match opt {

@@ -6,7 +6,7 @@ use std::io;
 
 //use rand::Rng;
 
-fn guess() {
+pub(crate) fn guess() {
     println!("Guess the number!");
 
 //    let secret_number = rand::thread_rng().gen_range(1, 101);

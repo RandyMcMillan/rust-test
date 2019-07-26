@@ -10,7 +10,7 @@ impl Rectangle {
     }
 }
 
-fn structs_rectangle() {
+pub(crate) fn structs_rectangle() {
     let rect1 = Rectangle { width: 30, height: 50 };
 
     println!(

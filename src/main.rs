@@ -1,23 +1,34 @@
-use std::collections::HashMap;
-use std::io::Write;
+use clap::{App, AppSettings, SubCommand};
 
-use clap::{App, SubCommand, AppSettings};
-use std::iter::Map;
+use collections::collections;
+use expressions::expressions;
+use fibonacci::fibonacci;
+use guess::guess;
+use json::json;
+use lifetimes::lifetimes;
+use loops::loops;
+use option::option;
+use ownership::ownership;
+use slice::slice;
+use structs_rectangle::structs_rectangle;
+use testing::testing;
+use traits::traits;
+use variables::variables;
 
-include!("guess.rs");
-include!("variables.rs");
-include!("expressions.rs");
-include!("loops.rs");
-include!("fibonacci.rs");
-include!("ownership.rs");
-include!("slice.rs");
-include!("structs_rectangle.rs");
-include!("option.rs");
-include!("json.rs");
-include!("collections.rs");
-include!("traits.rs");
-include!("lifetimes.rs");
-include!("testing.rs");
+mod guess;
+mod variables;
+mod expressions;
+mod loops;
+mod fibonacci;
+mod ownership;
+mod slice;
+mod structs_rectangle;
+mod option;
+mod json;
+mod collections;
+mod traits;
+mod lifetimes;
+mod testing;
 
 enum Commands {
     Guess,
@@ -37,12 +48,7 @@ enum Commands {
 }
 
 
-
-
 fn main() {
-
-
-
     let matches = App::new("rust-test")
         .author("RichoDemus")
         .version("v1.0-beta")

@@ -1,4 +1,7 @@
-fn fibonacci() {
+use std::io;
+use std::io::Write;
+
+pub(crate) fn fibonacci() {
     println!("How many numbers in the Fibonacci sequence?");
 
     let mut count = String::new();
