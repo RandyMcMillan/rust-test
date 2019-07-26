@@ -11,6 +11,7 @@ use option::option;
 use ownership::ownership;
 use slice::slice;
 use structs_rectangle::structs_rectangle;
+use subdir::another_file::hello_from_another_dir;
 use testing::testing;
 use traits::traits;
 use variables::variables;
@@ -29,6 +30,7 @@ mod collections;
 mod traits;
 mod lifetimes;
 mod testing;
+mod subdir;
 
 enum Commands {
     Guess,
@@ -45,6 +47,7 @@ enum Commands {
     Traits,
     Lifetimes,
     Testing,
+    Subdir,
 }
 
 
@@ -68,6 +71,7 @@ fn main() {
         .subcommand(SubCommand::with_name("traits"))
         .subcommand(SubCommand::with_name("lifetimes"))
         .subcommand(SubCommand::with_name("testing"))
+        .subcommand(SubCommand::with_name("subdir"))
         .get_matches();
 
 
@@ -86,6 +90,7 @@ fn main() {
         ("traits", Some(_)) => traits(),
         ("lifetimes", Some(_)) => lifetimes(),
         ("testing", Some(_)) => testing(),
+        ("subdir", Some(_)) => hello_from_another_dir(),
         _ => panic!("Invalid option")
     };
 }
