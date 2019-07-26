@@ -1,7 +1,7 @@
 use std::collections::HashMap;
 use std::io::Write;
 
-use clap::{App, SubCommand};
+use clap::{App, SubCommand, AppSettings};
 use std::iter::Map;
 
 include!("guess.rs");
@@ -46,7 +46,8 @@ fn main() {
     let matches = App::new("rust-test")
         .author("RichoDemus")
         .version("v1.0-beta")
-        .subcommands(commands)
+        .setting(AppSettings::ArgRequiredElseHelp)
+//        .subcommands(commands)
         .subcommand(SubCommand::with_name("guess"))
         .subcommand(SubCommand::with_name("variables"))
         .subcommand(SubCommand::with_name("expressions"))
