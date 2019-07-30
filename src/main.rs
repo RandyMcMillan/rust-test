@@ -1,54 +1,25 @@
 use clap::{App, AppSettings, SubCommand};
 
-use collections::collections;
-use expressions::expressions;
-use fibonacci::fibonacci;
-use guess::guess;
-use json::json;
-use lifetimes::lifetimes;
-use loops::loops;
-use option::option;
-use ownership::ownership;
-use slice::slice;
-use structs_rectangle::structs_rectangle;
-use subdir::another_file::hello_from_another_dir;
-use testing::testing;
-use traits::traits;
-use variables::variables;
+use rust_test_lib::run;
 
-mod guess;
-mod variables;
-mod expressions;
-mod loops;
-mod fibonacci;
-mod ownership;
-mod slice;
-mod structs_rectangle;
-mod option;
-mod json;
-mod collections;
-mod traits;
-mod lifetimes;
-mod testing;
-mod subdir;
-
-enum Commands {
-    Guess,
-    Variables,
-    Expressions,
-    Loops,
-    Fibonacci,
-    Ownership,
-    Slice,
-    Rectangle,
-    Option,
-    Json,
-    Collections,
-    Traits,
-    Lifetimes,
-    Testing,
-    Subdir,
-}
+// todo try those iterable enums or something
+//enum Commands {
+//    Guess,
+//    Variables,
+//    Expressions,
+//    Loops,
+//    Fibonacci,
+//    Ownership,
+//    Slice,
+//    Rectangle,
+//    Option,
+//    Json,
+//    Collections,
+//    Traits,
+//    Lifetimes,
+//    Testing,
+//    Subdir,
+//}
 
 
 fn main() {
@@ -56,7 +27,6 @@ fn main() {
         .author("RichoDemus")
         .version("v1.0-beta")
         .setting(AppSettings::ArgRequiredElseHelp)
-//        .subcommands(commands)
         .subcommand(SubCommand::with_name("guess"))
         .subcommand(SubCommand::with_name("variables"))
         .subcommand(SubCommand::with_name("expressions"))
@@ -74,23 +44,8 @@ fn main() {
         .subcommand(SubCommand::with_name("subdir"))
         .get_matches();
 
-
-    match matches.subcommand() {
-        ("guess", Some(_)) => guess(),
-        ("variables", Some(_)) => variables(),
-        ("expressions", Some(_)) => expressions(),
-        ("loops", Some(_)) => loops(),
-        ("fibonacci", Some(_)) => fibonacci(),
-        ("ownership", Some(_)) => ownership(),
-        ("slice", Some(_)) => slice(),
-        ("rectangle", Some(_)) => structs_rectangle(),
-        ("option", Some(_)) => option(),
-        ("json", Some(_)) => json(),
-        ("collections", Some(_)) => collections(),
-        ("traits", Some(_)) => traits(),
-        ("lifetimes", Some(_)) => lifetimes(),
-        ("testing", Some(_)) => testing(),
-        ("subdir", Some(_)) => hello_from_another_dir(),
-        _ => panic!("Invalid option")
-    };
+    match matches.subcommand_name() {
+        Some(name) => run(name),
+        None => panic!("no subcommand")
+    }
 }

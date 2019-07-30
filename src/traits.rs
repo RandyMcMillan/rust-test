@@ -54,6 +54,15 @@ fn combined_types(tweet: impl Summary + Characters) {
 }
 
 pub(crate) fn traits() {
+
+    let news = NewsArticle{
+        headline: "".to_string(),
+        location: "".to_string(),
+        author: "".to_string(),
+        content: "".to_string()
+    };
+    println!("{}", news.content);
+
     let tweet = Tweet {
         username: "Richo".to_string(),
         content: "Hello World".to_string(),
@@ -63,7 +72,9 @@ pub(crate) fn traits() {
 
 
     let chars: &Characters = &tweet as &Characters;
+    println!("{}", chars.characters());
     let summ: &Summary = &tweet as &Summary;
+    println!("{}", summ.summarize());
 
 
     combined_types(tweet);

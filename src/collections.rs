@@ -1,5 +1,6 @@
 use std::collections::HashMap;
 
+#[allow(unused_variables)]
 pub(crate) fn collections() {
     let ints: Vec<i32> = Vec::new();
     let one_two_three = vec![1, 2, 3];

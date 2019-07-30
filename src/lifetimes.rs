@@ -12,6 +12,7 @@ pub(crate) fn lifetimes() {
         .next()
         .expect("Could not find a '.'");
     let i = ImportantExcerpt { part: first_sentence };
+    println!("{}", i.part);
 }
 
 fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {

@@ -1,6 +1,8 @@
+#[allow(unused_variables)]
 pub fn slice() {
     let whole_word = String::from("hello world");
 
+    let word = first_word_old(&whole_word);
     let word = first_word(&whole_word);
 
     println!("{} -> {}", whole_word, word);

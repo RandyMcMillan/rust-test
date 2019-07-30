@@ -2,10 +2,12 @@ pub(crate) fn testing() {
     println!("hello there");
 }
 
+#[allow(dead_code)]
 pub fn add_two(a: i32) -> i32 {
     internal_adder(a, 2)
 }
 
+#[allow(dead_code)]
 fn internal_adder(a: i32, b: i32) -> i32 {
     a + b
 }
@@ -21,7 +23,7 @@ mod tests {
 
     #[test]
     fn it_works() {
-        assert_eq!(2 + 2, 4);
+        assert_eq!(add_two(2), 4);
     }
 
     #[test]

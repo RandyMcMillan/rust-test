@@ -1,3 +1,4 @@
+#[allow(unused_variables)]
 pub(crate) fn ownership() {
     let mut str = String::from("hello");
 
@@ -6,6 +7,7 @@ pub(crate) fn ownership() {
 
     test(str);
 
+    #[allow(unused_mut)]
     let mut mutable = String::from("hi");
     let immutable = mutable.clone();
 //    immutable.push_str("!");

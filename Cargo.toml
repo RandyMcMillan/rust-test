@@ -4,6 +4,14 @@ version = "0.1.0"
 authors = ["Richard Tjerngren <rtjerngren@spotify.com>"]
 edition = "2018"
 
+[lib]
+name = "rust_test_lib"
+path = "src/lib.rs"
+
+[[bin]]
+name = "rust_test_bin"
+path = "src/main.rs"
+
 [dependencies]
 rand = "0.4.0"
 serde_json = "1.0.39"

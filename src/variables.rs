@@ -1,3 +1,4 @@
+#[allow(unused_variables)]
 pub(crate) fn variables() {
     let x = 5;
 
