@@ -14,22 +14,21 @@ use testing::testing;
 use traits::traits;
 use variables::variables;
 
-mod guess;
-mod variables;
+mod collections;
 mod expressions;
-mod loops;
 mod fibonacci;
+mod guess;
+mod json;
+mod lifetimes;
+mod loops;
+mod option;
 mod ownership;
 mod slice;
 mod structs_rectangle;
-mod option;
-mod json;
-mod collections;
-mod traits;
-mod lifetimes;
-mod testing;
 mod subdir;
-
+mod testing;
+mod traits;
+mod variables;
 
 ///
 /// Elaborate function to sum two integers
@@ -42,7 +41,6 @@ mod subdir;
 pub fn add(a: i32, b: i32) -> i32 {
     a + b
 }
-
 
 pub fn run(name: &str) {
     match name {
@@ -61,6 +59,6 @@ pub fn run(name: &str) {
         "lifetimes" => lifetimes(),
         "testing" => testing(),
         "subdir" => hello_from_another_dir(),
-        _ => panic!("Invalid option")
+        _ => panic!("Invalid option"),
     };
 }

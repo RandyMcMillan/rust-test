@@ -10,7 +10,7 @@ pub(crate) fn ownership() {
     #[allow(unused_mut)]
     let mut mutable = String::from("hi");
     let immutable = mutable.clone();
-//    immutable.push_str("!");
+    //    immutable.push_str("!");
 
     let hello = String::from("hi");
 

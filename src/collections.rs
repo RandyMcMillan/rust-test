@@ -13,7 +13,6 @@ pub(crate) fn collections() {
     mutating_vector.push(7);
     mutating_vector.push(8);
 
-
     // referencing elements in vector
     let v = vec![1, 2, 3, 4, 5];
 
@@ -47,7 +46,6 @@ pub(crate) fn collections() {
     scores.insert(String::from("Yellow"), 50);
 
     println!("Map: {:?}", scores);
-
 
     // vec to map via collect
     let teams = vec![String::from("Blue"), String::from("Yellow")];
@@ -97,9 +95,8 @@ pub(crate) fn collections() {
 
 #[derive(Copy, Clone)]
 struct MyStruct {
-    num: i32
+    num: i32,
 }
-
 
 fn collections_copy_ownership() {
     let value = MyStruct { num: 12 };

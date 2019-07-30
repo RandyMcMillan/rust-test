@@ -12,7 +12,6 @@ pub(crate) fn variables() {
 
     println!("The value of five() is: {}", x);
 
-
     let hello = 1;
     let hello = "qweqwe";
 }

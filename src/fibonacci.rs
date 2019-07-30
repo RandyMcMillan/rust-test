@@ -6,11 +6,11 @@ pub(crate) fn fibonacci() {
 
     let mut count = String::new();
 
-    io::stdin().read_line(&mut count)
+    io::stdin()
+        .read_line(&mut count)
         .expect("Failed to read line");
 
-    let count: u32 = count.trim().parse()
-        .expect("Please type a number!");
+    let count: u32 = count.trim().parse().expect("Please type a number!");
 
     fibonacci_n(count)
 }

@@ -21,7 +21,6 @@ use rust_test_lib::run;
 //    Subdir,
 //}
 
-
 fn main() {
     let matches = App::new("rust-test")
         .author("RichoDemus")
@@ -46,6 +45,6 @@ fn main() {
 
     match matches.subcommand_name() {
         Some(name) => run(name),
-        None => panic!("no subcommand")
+        None => panic!("no subcommand"),
     }
 }

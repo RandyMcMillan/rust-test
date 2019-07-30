@@ -8,7 +8,6 @@ pub fn slice() {
     println!("{} -> {}", whole_word, word);
 }
 
-
 fn first_word(s: &String) -> &str {
     let bytes = s.as_bytes();
 

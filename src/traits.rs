@@ -50,16 +50,19 @@ impl IsThisExtensionMethods for String {
 }
 
 fn combined_types(tweet: impl Summary + Characters) {
-    println!("Tweet of {} chars: {}", tweet.characters(), tweet.summarize());
+    println!(
+        "Tweet of {} chars: {}",
+        tweet.characters(),
+        tweet.summarize()
+    );
 }
 
 pub(crate) fn traits() {
-
-    let news = NewsArticle{
+    let news = NewsArticle {
         headline: "".to_string(),
         location: "".to_string(),
         author: "".to_string(),
-        content: "".to_string()
+        content: "".to_string(),
     };
     println!("{}", news.content);
 
@@ -70,12 +73,10 @@ pub(crate) fn traits() {
         retweet: false,
     };
 
-
     let chars: &Characters = &tweet as &Characters;
     println!("{}", chars.characters());
     let summ: &Summary = &tweet as &Summary;
     println!("{}", summ.summarize());
-
 
     combined_types(tweet);
     println!("extension method?: {}", "asd".to_string().dunno())
