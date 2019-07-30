@@ -11,6 +11,7 @@ pub(crate) fn option() {
     println!("unrwapped: {:?}", unwrapped);
 
     let some_u8_value = Some(0u8);
+    #[allow(clippy::single_match)]
     match some_u8_value {
         Some(3) => println!("three"),
         _ => (),

@@ -33,7 +33,7 @@ fn fib(n: u32) -> u32 {
         return 1;
     }
 
-    return fib(n - 1) + fib(n - 2);
+    fib(n - 1) + fib(n - 2)
 }
 
 fn fib2(n: u32) -> u32 {

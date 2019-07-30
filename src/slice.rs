@@ -8,7 +8,7 @@ pub fn slice() {
     println!("{} -> {}", whole_word, word);
 }
 
-fn first_word(s: &String) -> &str {
+fn first_word(s: &str) -> &str {
     let bytes = s.as_bytes();
 
     for (i, &item) in bytes.iter().enumerate() {
@@ -20,7 +20,7 @@ fn first_word(s: &String) -> &str {
     &s[..]
 }
 
-fn first_word_old(s: &String) -> usize {
+fn first_word_old(s: &str) -> usize {
     let bytes = s.as_bytes();
 
     for (i, &item) in bytes.iter().enumerate() {

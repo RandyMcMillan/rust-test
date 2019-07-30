@@ -38,6 +38,7 @@ mod tests {
         vec![1][100];
     }
 
+    #[allow(clippy::eq_op)] // I think this is a false positive
     #[test]
     fn it_works_but_with_result() -> Result<(), String> {
         if 2 + 2 == 4 {

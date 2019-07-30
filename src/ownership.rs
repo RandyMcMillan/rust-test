@@ -21,7 +21,7 @@ fn test(str: String) {
     println!("test{:?}", str);
 }
 
-fn reference(str: &String) {
+fn reference(str: &str) {
     println!("ref {:?}", str);
 }
 
