@@ -1,0 +1,9 @@
+[package]
+name = "rust-test-cli"
+version = "0.1.0"
+authors = ["Richard Tjerngren <rtjerngren@spotify.com>"]
+edition = "2018"
+
+[dependencies]
+rust-test-lib = { path = "../lib" }
+clap = "2"
