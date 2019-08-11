@@ -6,6 +6,10 @@ pub fn slice() {
     let word = first_word(&whole_word);
 
     println!("{} -> {}", whole_word, word);
+
+    //String to slice
+    let test = &String::from("hello")[..];
+    println!("Test: {}", test);
 }
 
 fn first_word(s: &str) -> &str {

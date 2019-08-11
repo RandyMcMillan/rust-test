@@ -41,6 +41,8 @@ fn main() {
         .subcommand(SubCommand::with_name("lifetimes"))
         .subcommand(SubCommand::with_name("testing"))
         .subcommand(SubCommand::with_name("subdir"))
+        .subcommand(SubCommand::with_name("pointers"))
+        .subcommand(SubCommand::with_name("refcell"))
         .get_matches();
 
     match matches.subcommand_name() {

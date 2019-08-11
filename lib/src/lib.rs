@@ -13,6 +13,8 @@ use subdir::another_file::hello_from_another_dir;
 use testing::testing;
 use traits::traits;
 use variables::variables;
+use pointers::pointers;
+use refcell::refcell;
 
 mod collections;
 mod expressions;
@@ -29,6 +31,8 @@ mod subdir;
 mod testing;
 mod traits;
 mod variables;
+mod pointers;
+mod refcell;
 
 ///
 /// Elaborate function to sum two integers
@@ -59,6 +63,8 @@ pub fn run(name: &str) {
         "lifetimes" => lifetimes(),
         "testing" => testing(),
         "subdir" => hello_from_another_dir(),
+        "pointers" => pointers(),
+        "refcell" => refcell(),
         _ => panic!("Invalid option"),
     };
 }
