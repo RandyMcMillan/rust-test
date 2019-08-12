@@ -1,9 +1,9 @@
+use std::fmt::{Display, Error, Formatter};
 use std::ops::Deref;
-
-use crate::pointers::List::{Cons, Nil};
-use std::fmt::{Display, Formatter, Error};
 use std::rc::Rc;
-use crate::pointers::List2::{Cons2, Nil2};
+
+use crate::smart_pointers::pointers::List::{Cons, Nil};
+use crate::smart_pointers::pointers::List2::{Cons2, Nil2};
 
 pub(crate) fn pointers() {
     println!("Pointers!");

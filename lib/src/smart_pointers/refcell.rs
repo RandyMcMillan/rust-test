@@ -1,6 +1,6 @@
 use std::rc::Rc;
 use std::cell::RefCell;
-use crate::refcell::List::{Cons, Nil};
+use crate::smart_pointers::refcell::List::{Cons, Nil};
 
 pub(crate) fn refcell() {
     let value = Rc::new(RefCell::new(5));

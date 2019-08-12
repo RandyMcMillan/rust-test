@@ -13,8 +13,9 @@ use subdir::another_file::hello_from_another_dir;
 use testing::testing;
 use traits::traits;
 use variables::variables;
-use pointers::pointers;
-use refcell::refcell;
+use smart_pointers::pointers::pointers;
+use smart_pointers::refcell::refcell;
+use smart_pointers::tree::tree;
 
 mod collections;
 mod expressions;
@@ -31,8 +32,7 @@ mod subdir;
 mod testing;
 mod traits;
 mod variables;
-mod pointers;
-mod refcell;
+mod smart_pointers;
 
 ///
 /// Elaborate function to sum two integers
@@ -65,6 +65,7 @@ pub fn run(name: &str) {
         "subdir" => hello_from_another_dir(),
         "pointers" => pointers(),
         "refcell" => refcell(),
+        "tree" => tree(),
         _ => panic!("Invalid option"),
     };
 }

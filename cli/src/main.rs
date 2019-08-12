@@ -43,6 +43,7 @@ fn main() {
         .subcommand(SubCommand::with_name("subdir"))
         .subcommand(SubCommand::with_name("pointers"))
         .subcommand(SubCommand::with_name("refcell"))
+        .subcommand(SubCommand::with_name("tree"))
         .get_matches();
 
     match matches.subcommand_name() {
