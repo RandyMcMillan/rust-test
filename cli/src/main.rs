@@ -44,6 +44,7 @@ fn main() {
         .subcommand(SubCommand::with_name("pointers"))
         .subcommand(SubCommand::with_name("refcell"))
         .subcommand(SubCommand::with_name("tree"))
+        .subcommand(SubCommand::with_name("threads"))
         .get_matches();
 
     match matches.subcommand_name() {

@@ -16,6 +16,7 @@ use variables::variables;
 use smart_pointers::pointers::pointers;
 use smart_pointers::refcell::refcell;
 use smart_pointers::tree::tree;
+use concurrency::threads::threads;
 
 mod collections;
 mod expressions;
@@ -33,6 +34,7 @@ mod testing;
 mod traits;
 mod variables;
 mod smart_pointers;
+mod concurrency;
 
 ///
 /// Elaborate function to sum two integers
@@ -66,6 +68,7 @@ pub fn run(name: &str) {
         "pointers" => pointers(),
         "refcell" => refcell(),
         "tree" => tree(),
+        "threads" => threads(),
         _ => panic!("Invalid option"),
     };
 }
