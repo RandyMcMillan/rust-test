@@ -10,8 +10,8 @@ pub(crate) fn thread2() {
     const THREADS: usize = 10;
     const WORK_PER_THREAD: usize = 1000;
     const TOTAL_WORK : usize = THREADS * WORK_PER_THREAD;
-    let work: Arc<Mutex<Vec<Work>>> = Arc::new(Mutex::new(vec![]));
-    let results: Arc<Mutex<Vec<Result>>> = Arc::new(Mutex::new(vec![]));
+    let work = Arc::new(Mutex::new(vec![]));
+    let results = Arc::new(Mutex::new(vec![]));
     let seq = Arc::new(Mutex::new(0));
     let state = Arc::new(Mutex::new(State::Init));
     let mut handles = vec![];
