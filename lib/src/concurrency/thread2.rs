@@ -16,6 +16,7 @@ pub(crate) fn thread2() {
     let state = Arc::new(Mutex::new(State::Init));
     let mut handles = vec![];
 
+    // a little thread that just prints the status/progress every second
     {
         let arc_id = Arc::clone(&seq);
         let arc_state = Arc::clone(&state);
@@ -95,6 +96,8 @@ pub(crate) fn thread2() {
         let mut state = state.lock().unwrap();
         *state = State::WaitingForWorkers;
     }
+
+    // wait for all threads to finish
     for handle in handles {
         handle.join().unwrap();
     }
