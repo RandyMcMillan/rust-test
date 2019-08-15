@@ -17,6 +17,7 @@ use smart_pointers::pointers::pointers;
 use smart_pointers::refcell::refcell;
 use smart_pointers::tree::tree;
 use concurrency::threads::threads;
+use concurrency::thread2::thread2;
 
 mod collections;
 mod expressions;
@@ -69,6 +70,7 @@ pub fn run(name: &str) {
         "refcell" => refcell(),
         "tree" => tree(),
         "threads" => threads(),
+        "thread2" => thread2(),
         _ => panic!("Invalid option"),
     };
 }
