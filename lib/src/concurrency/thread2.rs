@@ -1,15 +1,12 @@
-use std::borrow::Borrow;
 use std::sync::{Arc, Mutex};
 use std::thread;
 use std::time::Duration;
-
-use crate::loops::loops;
 
 // attempting to make something threaded myself
 pub(crate) fn thread2() {
     const THREADS: usize = 10;
     const WORK_PER_THREAD: usize = 1000;
-    const TOTAL_WORK : usize = THREADS * WORK_PER_THREAD;
+    const TOTAL_WORK: usize = THREADS * WORK_PER_THREAD;
     let work = Arc::new(Mutex::new(vec![]));
     let results = Arc::new(Mutex::new(vec![]));
     let seq = Arc::new(Mutex::new(0));
@@ -133,4 +130,24 @@ enum State {
     SpawingJobCreators,
     SpawningWorkers,
     WaitingForWorkers,
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn play_with_mutex() {
+        let wrapped = Arc::new(Mutex::new(String::from("hello")));
+        println!("Before: value is: {:?}", wrapped);
+        {
+            let mut unlocked = wrapped.lock().unwrap();
+            *unlocked = (*unlocked.to_uppercase()).parse().unwrap();
+            println!("After mut: value is: {:?}", wrapped);
+            println!("actual var is: {:?}", unlocked);
+        }
+        {
+            println!("New Scope value is: {:?}", wrapped);
+        }
+    }
 }
