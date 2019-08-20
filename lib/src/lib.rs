@@ -18,6 +18,7 @@ use smart_pointers::refcell::refcell;
 use smart_pointers::tree::tree;
 use concurrency::threads::threads;
 use concurrency::thread2::thread2;
+use either::either_usage::either;
 
 mod collections;
 mod expressions;
@@ -36,6 +37,7 @@ mod traits;
 mod variables;
 mod smart_pointers;
 mod concurrency;
+mod either;
 
 ///
 /// Elaborate function to sum two integers
@@ -71,6 +73,7 @@ pub fn run(name: &str) {
         "tree" => tree(),
         "threads" => threads(),
         "thread2" => thread2(),
+        "either" => either(),
         _ => panic!("Invalid option"),
     };
 }
