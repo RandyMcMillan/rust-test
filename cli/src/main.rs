@@ -48,6 +48,7 @@ fn main() {
         .subcommand(SubCommand::with_name("thread2"))
         .subcommand(SubCommand::with_name("either"))
         .subcommand(SubCommand::with_name("notification"))
+        .subcommand(SubCommand::with_name("rest"))
         .get_matches();
 
     match matches.subcommand_name() {

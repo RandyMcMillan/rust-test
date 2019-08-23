@@ -20,6 +20,7 @@ use concurrency::threads::threads;
 use concurrency::thread2::thread2;
 use either::either_usage::either;
 use notification::notification;
+use rest::rest;
 
 mod collections;
 mod expressions;
@@ -40,6 +41,7 @@ mod smart_pointers;
 mod concurrency;
 mod either;
 mod notification;
+mod rest;
 
 ///
 /// Elaborate function to sum two integers
@@ -77,6 +79,7 @@ pub fn run(name: &str) {
         "thread2" => thread2(),
         "either" => either(),
         "notification" => notification(),
+        "rest" => rest(),
         _ => panic!("Invalid option"),
     };
 }
