@@ -19,6 +19,7 @@ use smart_pointers::tree::tree;
 use concurrency::threads::threads;
 use concurrency::thread2::thread2;
 use either::either_usage::either;
+use notification::notification;
 
 mod collections;
 mod expressions;
@@ -38,6 +39,7 @@ mod variables;
 mod smart_pointers;
 mod concurrency;
 mod either;
+mod notification;
 
 ///
 /// Elaborate function to sum two integers
@@ -74,6 +76,7 @@ pub fn run(name: &str) {
         "threads" => threads(),
         "thread2" => thread2(),
         "either" => either(),
+        "notification" => notification(),
         _ => panic!("Invalid option"),
     };
 }
