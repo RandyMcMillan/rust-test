@@ -52,7 +52,7 @@ cargo-t:cargo-test
 test:cargo-test
 cargo-test:### 	cargo-test
 	@. $(HOME)/.cargo/env
-	cargo +nightly fmt -- --check
+	cargo +nightly fmt -- --check || rustup install nightly
 	cargo +$(TOOLCHAIN) test -- --nocapture || \
 	(\
 		cargo +$(TOOLCHAIN) test)

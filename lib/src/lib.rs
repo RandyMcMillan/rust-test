@@ -52,7 +52,7 @@ mod making_lists;
 /// Elaborate function to sum two integers
 /// # Example
 /// ```
-/// let sum = rust_test_lib::add(1,3);
+/// let sum = gnostr_lib::add(1,3);
 /// assert_eq!(4, sum);
 /// ```
 

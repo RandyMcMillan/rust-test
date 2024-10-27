@@ -419,7 +419,17 @@ name = "gnostr"
 version = "0.0.1"
 dependencies = [
  "clap",
- "rust-test-lib",
+ "gnostr_lib",
+]
+
+[[package]]
+name = "gnostr_lib"
+version = "0.0.1"
+dependencies = [
+ "mac-notification-sys",
+ "rand 0.4.6",
+ "reqwest",
+ "serde",
 ]
 
 [[package]]
@@ -1144,16 +1154,6 @@ dependencies = [
  "url",
  "uuid",
  "winreg",
-]
-
-[[package]]
-name = "rust-test-lib"
-version = "0.1.0"
-dependencies = [
- "mac-notification-sys",
- "rand 0.4.6",
- "reqwest",
- "serde",
 ]
 
 [[package]]

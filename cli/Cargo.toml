@@ -5,5 +5,5 @@ authors = ["gnostr <admin@gnostr.org>", "Richard Tjerngren <rtjerngren@spotify.c
 edition = "2018"
 
 [dependencies]
-rust-test-lib = { path = "../lib" }
+gnostr_lib = { path = "../lib" }
 clap = "2"

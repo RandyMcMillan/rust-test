@@ -1,6 +1,6 @@
 use clap::{App, AppSettings, SubCommand};
 
-use rust_test_lib::run;
+use gnostr_lib::run;
 
 // todo try those iterable enums or something
 //enum Commands {
