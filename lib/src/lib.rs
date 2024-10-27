@@ -23,6 +23,9 @@ use notification::notification;
 use rest::rest;
 use making_lists::ring_buffer;
 
+use install::install;
+mod install;
+
 mod collections;
 mod expressions;
 mod fibonacci;
@@ -83,6 +86,7 @@ pub fn run(name: &str) {
         "notification" => notification(),
         "rest" => rest(),
         "lists" => ring_buffer::ring_buffer(),
+        "install" => install(),
         _ => panic!("Invalid option"),
     };
 }
