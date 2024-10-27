@@ -1,7 +1,7 @@
 [package]
-name = "rust-test-cli"
-version = "0.1.0"
-authors = ["Richard Tjerngren <rtjerngren@spotify.com>"]
+name = "gnostr"
+version = "0.0.1"
+authors = ["gnostr <admin@gnostr.org>", "Richard Tjerngren <rtjerngren@spotify.com>"]
 edition = "2018"
 
 [dependencies]
