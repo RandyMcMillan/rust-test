@@ -73,9 +73,9 @@ pub(crate) fn traits() {
         retweet: false,
     };
 
-    let chars: &Characters = &tweet as &Characters;
+    let chars: &dyn Characters = &tweet as &dyn Characters;
     println!("{}", chars.characters());
-    let summ: &Summary = &tweet as &Summary;
+    let summ: &dyn Summary = &tweet as &dyn Summary;
     println!("{}", summ.summarize());
 
     combined_types(tweet);
