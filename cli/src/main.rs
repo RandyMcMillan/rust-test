@@ -22,9 +22,9 @@ use gnostr_lib::run;
 //}
 
 fn main() {
-    let matches = App::new("rust-test")
-        .author("RichoDemus")
-        .version("v1.0-beta")
+    let matches = App::new("gnostr: a git+nostr workflow utility")
+        //.author("		a git+nostr workflow utility")
+        .version("v0.0.1")
         .setting(AppSettings::ArgRequiredElseHelp)
         .subcommand(SubCommand::with_name("guess"))
         .subcommand(SubCommand::with_name("variables"))
