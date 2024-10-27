@@ -1,2 +1,2 @@
-pub mod threads;
 pub mod thread2;
+pub mod threads;

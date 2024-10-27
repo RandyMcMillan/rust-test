@@ -16,7 +16,7 @@ struct Node2<'a> {
 }
 
 impl<'a> Node2<'a> {
-    fn set_parent(&mut self, parent:Option<&'a Node2<'a>>) {
+    fn set_parent(&mut self, parent: Option<&'a Node2<'a>>) {
         self.parent = parent
     }
 }
@@ -41,7 +41,7 @@ pub(crate) fn tree() {
     println!("leaf parent = {:?}", leaf.parent.borrow().upgrade());
 
     let mut leaf2 = Node2 {
-        value:1337,
+        value: 1337,
         parent: None,
         children: RefCell::new(vec![]),
     };
@@ -49,7 +49,7 @@ pub(crate) fn tree() {
     let root = Node2 {
         value: 100,
         parent: None,
-//        children: RefCell::new(vec!(Rc:clone(&leaf2))),
+        //        children: RefCell::new(vec!(Rc:clone(&leaf2))),
         children: RefCell::new(vec![]),
     };
 
@@ -57,5 +57,4 @@ pub(crate) fn tree() {
 
     println!("leaf: {:?}", leaf2);
     println!("root: {:?}", root);
-
 }

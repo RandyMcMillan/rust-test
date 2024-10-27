@@ -5,5 +5,5 @@ pub(crate) fn ring_buffer() {
 #[derive(Debug)]
 struct RingBuffer<T> {
     value: T,
-    next: Box<RingBuffer<T>>
+    next: Box<RingBuffer<T>>,
 }

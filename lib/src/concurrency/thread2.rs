@@ -19,25 +19,23 @@ pub(crate) fn thread2() {
         let arc_state = Arc::clone(&state);
         let arc_wrk = Arc::clone(&work);
         let arc_res = Arc::clone(&results);
-        handles.push(thread::spawn(move || {
-            loop {
-                {
-                    let id = arc_id.lock().unwrap();
-                    let wrk = arc_wrk.lock().unwrap();
-                    let res = arc_res.lock().unwrap();
+        handles.push(thread::spawn(move || loop {
+            {
+                let id = arc_id.lock().unwrap();
+                let wrk = arc_wrk.lock().unwrap();
+                let res = arc_res.lock().unwrap();
 
-                    println!("State: {:?}", arc_state.lock().unwrap());
-                    println!("Seq: {:?}", id);
-                    println!("Work: {:?}", wrk.len());
-                    println!("Result: {:?}", res.len());
-                    println!();
-                    if res.len() >= TOTAL_WORK && wrk.is_empty() {
-                        println!("Exiting print thread");
-                        break;
-                    }
+                println!("State: {:?}", arc_state.lock().unwrap());
+                println!("Seq: {:?}", id);
+                println!("Work: {:?}", wrk.len());
+                println!("Result: {:?}", res.len());
+                println!();
+                if res.len() >= TOTAL_WORK && wrk.is_empty() {
+                    println!("Exiting print thread");
+                    break;
                 }
-                thread::sleep(Duration::from_secs(1));
             }
+            thread::sleep(Duration::from_secs(1));
         }));
     }
     // create work, if it was only this easy irl
@@ -54,7 +52,10 @@ pub(crate) fn thread2() {
                 let mut id = arc_id.lock().unwrap();
                 *id += 1;
 
-                arc_wrk.lock().unwrap().push(Work { id: id.clone(), msg: "hello".to_string() })
+                arc_wrk.lock().unwrap().push(Work {
+                    id: id.clone(),
+                    msg: "hello".to_string(),
+                })
             }
         }));
     }
@@ -67,23 +68,19 @@ pub(crate) fn thread2() {
     for _ in 0..THREADS {
         let arc_wrk = Arc::clone(&work);
         let arc_res = Arc::clone(&results);
-        handles.push(thread::spawn(move || {
-            loop {
-                thread::sleep(Duration::from_millis(1000));
-                let maybe_work = arc_wrk.lock().unwrap().pop();
+        handles.push(thread::spawn(move || loop {
+            thread::sleep(Duration::from_millis(1000));
+            let maybe_work = arc_wrk.lock().unwrap().pop();
 
-                let maybe_result = maybe_work.map(|work| {
-                    do_work(work)
-                });
+            let maybe_result = maybe_work.map(|work| do_work(work));
 
-                if let Some(result) = maybe_result {
-                    arc_res.lock().unwrap().push(result);
-                }
-                {
-                    let res = arc_res.lock().unwrap();
-                    if res.len() >= TOTAL_WORK {
-                        break;
-                    }
+            if let Some(result) = maybe_result {
+                arc_res.lock().unwrap().push(result);
+            }
+            {
+                let res = arc_res.lock().unwrap();
+                if res.len() >= TOTAL_WORK {
+                    break;
                 }
             }
         }));
@@ -105,7 +102,7 @@ pub(crate) fn thread2() {
 
 // dummy function to to simulate doing work
 fn do_work(work: Work) -> Result {
-//    thread::sleep(Duration::from_millis(10));
+    //    thread::sleep(Duration::from_millis(10));
     Result {
         id: work.id,
         msg: work.msg.to_ascii_uppercase(),

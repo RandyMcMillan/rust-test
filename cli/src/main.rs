@@ -50,9 +50,7 @@ fn main() {
         .subcommand(SubCommand::with_name("notification"))
         .subcommand(SubCommand::with_name("rest"))
         .subcommand(SubCommand::with_name("lists"))
-
         .subcommand(SubCommand::with_name("install"))
-
         .get_matches();
 
     match matches.subcommand_name() {

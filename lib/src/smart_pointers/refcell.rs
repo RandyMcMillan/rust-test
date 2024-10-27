@@ -1,6 +1,6 @@
-use std::rc::Rc;
-use std::cell::RefCell;
 use crate::smart_pointers::refcell::List::{Cons, Nil};
+use std::cell::RefCell;
+use std::rc::Rc;
 
 pub(crate) fn refcell() {
     let value = Rc::new(RefCell::new(5));
@@ -17,7 +17,6 @@ pub(crate) fn refcell() {
     println!("c after = {:?}", c);
 }
 
-
 pub trait Messenger {
     fn send(&self, msg: &str);
 }
@@ -30,7 +29,9 @@ pub struct LimitTracker<'a, T: 'a + Messenger> {
 }
 
 impl<'a, T> LimitTracker<'a, T>
-    where T: Messenger {
+where
+    T: Messenger,
+{
     #[allow(dead_code)]
     pub fn new(messenger: &T, max: usize) -> LimitTracker<T> {
         LimitTracker {
@@ -49,9 +50,11 @@ impl<'a, T> LimitTracker<'a, T>
         if percentage_of_max >= 1.0 {
             self.messenger.send("Error: You are over your quota!");
         } else if percentage_of_max >= 0.9 {
-            self.messenger.send("Urgent warning: You've used up over 90% of your quota!");
+            self.messenger
+                .send("Urgent warning: You've used up over 90% of your quota!");
         } else if percentage_of_max >= 0.75 {
-            self.messenger.send("Warning: You've used up over 75% of your quota!");
+            self.messenger
+                .send("Warning: You've used up over 75% of your quota!");
         }
     }
 }
@@ -61,7 +64,6 @@ enum List {
     Cons(Rc<RefCell<i32>>, Rc<List>),
     Nil,
 }
-
 
 #[cfg(test)]
 mod tests {
@@ -75,7 +77,9 @@ mod tests {
 
     impl MockMessenger {
         fn new() -> MockMessenger {
-            MockMessenger { sent_messages: RefCell::new(vec![]) }
+            MockMessenger {
+                sent_messages: RefCell::new(vec![]),
+            }
         }
     }
 

@@ -1,52 +1,52 @@
 use collections::collections;
+use concurrency::thread2::thread2;
+use concurrency::threads::threads;
+use either::either_usage::either;
 use expressions::expressions;
 use fibonacci::fibonacci;
 use guess::guess;
 use json::json;
 use lifetimes::lifetimes;
 use loops::loops;
+use making_lists::ring_buffer;
+use notification::notification;
 use option::option;
 use ownership::ownership;
+use rest::rest;
 use slice::slice;
+use smart_pointers::pointers::pointers;
+use smart_pointers::refcell::refcell;
+use smart_pointers::tree::tree;
 use structs_rectangle::structs_rectangle;
 use subdir::another_file::hello_from_another_dir;
 use testing::testing;
 use traits::traits;
 use variables::variables;
-use smart_pointers::pointers::pointers;
-use smart_pointers::refcell::refcell;
-use smart_pointers::tree::tree;
-use concurrency::threads::threads;
-use concurrency::thread2::thread2;
-use either::either_usage::either;
-use notification::notification;
-use rest::rest;
-use making_lists::ring_buffer;
 
 use install::install;
 mod install;
 
 mod collections;
+mod concurrency;
+mod either;
 mod expressions;
 mod fibonacci;
 mod guess;
 mod json;
 mod lifetimes;
 mod loops;
+mod making_lists;
+mod notification;
 mod option;
 mod ownership;
+mod rest;
 mod slice;
+mod smart_pointers;
 mod structs_rectangle;
 mod subdir;
 mod testing;
 mod traits;
 mod variables;
-mod smart_pointers;
-mod concurrency;
-mod either;
-mod notification;
-mod rest;
-mod making_lists;
 
 ///
 /// Elaborate function to sum two integers
