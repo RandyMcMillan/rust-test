@@ -26,8 +26,8 @@ cargo-build:### 	cargo build
 	@RUST_BACKTRACE=all cargo +$(TOOLCHAIN) b $(QUIET)
 cargo-i:cargo-install
 cargo-install:### 	cargo install --path . $(FORCE)
-	#@. $(HOME)/.cargo/env
-	@cargo install --path . $(FORCE)
+	@. $(HOME)/.cargo/env
+	@cargo install --path cli $(FORCE)
 	#for t in $(SUBMODULES); do echo $$t; cargo install -vv gnostr-$$t --force 2>/dev/null || echo "gnostr-$$t not found"; done
 cargo-br:cargo-build-release### 	cargo-br
 ## 	cargo-br q=true
@@ -54,9 +54,9 @@ test:cargo-test
 cargo-test:### 	cargo-test
 	@. $(HOME)/.cargo/env
 	cargo +nightly fmt -- --check || rustup install nightly
-	cargo +$(TOOLCHAIN) test -- --nocapture || \
+	cargo +$(TOOLCHAIN) test -vv -- --nocapture || \
 	(\
-		cargo +$(TOOLCHAIN) test)
+		cargo +$(TOOLCHAIN) test -vv -- --nocapture)
 cargo-tests:tests
 tests:cargo-test-all-features
 cargo-test-all-features:### 	cargo-test-all-features
