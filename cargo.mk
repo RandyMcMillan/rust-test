@@ -47,7 +47,8 @@ docs:cargo-doc
 cargo-docs:cargo-doc
 cargo-doc:### 	cargo-doc
 	@. $(HOME)/.cargo/env
-	@cargo +$(TOOLCHAIN) rustdoc
+	@cd lib && cargo +$(TOOLCHAIN) rustdoc
+	@cd cli && cargo +$(TOOLCHAIN) rustdoc
 cargo-t:cargo-test
 test:cargo-test
 cargo-test:### 	cargo-test
