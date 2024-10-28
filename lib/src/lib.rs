@@ -24,29 +24,29 @@ use traits::traits;
 use variables::variables;
 
 use install::install;
-mod install;
+pub mod install;
 
-mod collections;
-mod concurrency;
-mod either;
-mod expressions;
-mod fibonacci;
-mod guess;
-mod json;
-mod lifetimes;
-mod loops;
-mod making_lists;
-mod notification;
-mod option;
-mod ownership;
-mod rest;
-mod slice;
-mod smart_pointers;
-mod structs_rectangle;
-mod subdir;
-mod testing;
-mod traits;
-mod variables;
+pub mod collections;
+pub mod concurrency;
+pub mod either;
+pub mod expressions;
+pub mod fibonacci;
+pub mod guess;
+pub mod json;
+pub mod lifetimes;
+pub mod loops;
+pub mod making_lists;
+pub mod notification;
+pub mod option;
+pub mod ownership;
+pub mod rest;
+pub mod slice;
+pub mod smart_pointers;
+pub mod structs_rectangle;
+pub mod subdir;
+pub mod testing;
+pub mod traits;
+pub mod variables;
 
 ///
 /// Elaborate function to sum two integers
@@ -59,6 +59,16 @@ mod variables;
 pub fn add(a: i32, b: i32) -> i32 {
     a + b
 }
+
+///
+/// gnostr guess
+/// # gnostr guess
+/// ```
+/// use std::process::Command;
+/// let mut binding = Command::new("gnostr");
+/// let gnostr_guess = binding.arg("guess");
+/// print!("gnostr_guess={:?}", gnostr_guess);
+/// ```
 
 pub fn run(name: &str) {
     match name {
