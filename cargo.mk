@@ -27,7 +27,7 @@ cargo-build:### 	cargo build
 cargo-i:cargo-install
 cargo-install:### 	cargo install --path . $(FORCE)
 	@. $(HOME)/.cargo/env
-	@cargo install --path cli $(FORCE)
+	@cargo install --path . $(FORCE)
 	#for t in $(SUBMODULES); do echo $$t; cargo install -vv gnostr-$$t --force 2>/dev/null || echo "gnostr-$$t not found"; done
 cargo-br:cargo-build-release### 	cargo-br
 ## 	cargo-br q=true
