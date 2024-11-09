@@ -23,6 +23,9 @@ use testing::testing;
 use traits::traits;
 use variables::variables;
 
+use cargo_install::cargo_install;
+pub mod cargo_install;
+
 use install::install;
 pub mod install;
 
@@ -97,6 +100,7 @@ pub fn run(name: &str, command: &str) {
         "rest" => rest(),
         "lists" => ring_buffer::ring_buffer(),
         "install" => install(name, command),
-        _ => panic!("Invalid option"),
+        "cargo-install" => cargo_install(name, command),
+        _ => print!("Invalid option {} {}", name, command),
     };
 }

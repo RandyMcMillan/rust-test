@@ -12,6 +12,9 @@ pub enum Commands {
     Install {
         name: Option<String>,
     },
+    CargoInstall {
+        name: Option<String>,
+    },
 }
 
 #[derive(Parser, Debug)]
