@@ -2,7 +2,6 @@ use crate::config::{get_config_dir, get_data_dir};
 use clap::Parser;
 use clap::Subcommand;
 
-//#[derive(Subcommand)]
 #[derive(Subcommand, Debug)]
 pub enum Commands {
     /// Adds files to myapp                       
@@ -14,6 +13,9 @@ pub enum Commands {
     },
     CargoInstall {
         name: Option<String>,
+    },
+    GnostrTui {
+        tui: Option<bool>,
     },
 }
 
@@ -27,6 +29,10 @@ pub struct Cli {
     /// Frame rate, i.e. number of frames per second
     #[arg(short, long, value_name = "FLOAT", default_value_t = 60.0)]
     pub frame_rate: f64,
+
+    /// Invoke gnostr-tui
+    #[arg(short, long, action = clap::ArgAction::Count, value_name = "GNOSTR_TUI")]
+    pub gnostr_tui: u8,
 
     #[command(subcommand)]
     pub command: Option<Commands>,

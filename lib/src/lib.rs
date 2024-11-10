@@ -23,6 +23,9 @@ use testing::testing;
 use traits::traits;
 use variables::variables;
 
+use gnostr_tui::gnostr_tui;
+pub mod gnostr_tui;
+
 use cargo_install::cargo_install;
 pub mod cargo_install;
 
@@ -101,6 +104,7 @@ pub fn run(name: &str, command: &str) {
         "lists" => ring_buffer::ring_buffer(),
         "install" => install(name, command),
         "cargo-install" => cargo_install(name, command),
+        "gnostr-tui" => gnostr_tui(name, command),
         _ => print!("Invalid option {} {}", name, command),
     };
 }
