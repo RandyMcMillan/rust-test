@@ -22,36 +22,29 @@ cargo-install-bins:### 	cargo-install-bins
 cargo-b:cargo-build### 	cargo b
 cargo-build:### 	cargo build
 ## 	cargo-build q=true
-	@. $(HOME)/.cargo/env
 	@RUST_BACKTRACE=all cargo +$(TOOLCHAIN) b $(QUIET)
 cargo-i:cargo-install
 cargo-install:### 	cargo install --path . $(FORCE)
-	#@. $(HOME)/.cargo/env
 	@cargo install --path . $(FORCE)
 	#for t in $(SUBMODULES); do echo $$t; cargo install -vv gnostr-$$t --force 2>/dev/null || echo "gnostr-$$t not found"; done
 cargo-br:cargo-build-release### 	cargo-br
 ## 	cargo-br q=true
 cargo-build-release:### 	cargo-build-release
 ## 	cargo-build-release q=true
-	@. $(HOME)/.cargo/env
 	@cargo +$(TOOLCHAIN) b -r $(QUIET)
 cargo-bench:### 	cargo-bench
-	@. $(HOME)/.cargo/env
 	@cargo +$(TOOLCHAIN) bench
 cargo-c:cargo-check
 cargo-check:### 	cargo-check
-	@. $(HOME)/.cargo/env
 	@cargo +$(TOOLCHAIN) c
 doc:cargo-doc
 docs:cargo-doc
 cargo-docs:cargo-doc
 cargo-doc:### 	cargo-doc
-	@. $(HOME)/.cargo/env
 	@cargo +$(TOOLCHAIN) rustdoc
 cargo-t:cargo-test
 test:cargo-test
 cargo-test:### 	cargo-test
-	@. $(HOME)/.cargo/env
 	cargo +nightly fmt -- --check
 	cargo +$(TOOLCHAIN) test -- --nocapture || \
 	(\
@@ -59,13 +52,11 @@ cargo-test:### 	cargo-test
 cargo-tests:tests
 tests:cargo-test-all-features
 cargo-test-all-features:### 	cargo-test-all-features
-	@. $(HOME)/.cargo/env
 	cargo +nightly fmt -- --check
 	cargo +$(TOOLCHAIN) test --all-features -- --nocapture || \
 	(\
 	cargo +$(TOOLCHAIN) test --all-features)
 cargo-report:### 	cargo-report
-	@. $(HOME)/.cargo/env
 	cargo +$(TOOLCHAIN) report future-incompatibilities --id 1
 
 cargo-deps-gnostr-all:cargo-deps-gnostr-cat cargo-deps-gnostr-cli cargo-deps-gnostr-command cargo-deps-gnostr-grep cargo-deps-gnostr-legit cargo-deps-gnostr-sha256### 	cargo-deps-gnostr-all
