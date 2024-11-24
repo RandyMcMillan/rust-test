@@ -1,6 +1,6 @@
+use std::sync::{mpsc, Arc, Mutex};
 use std::thread;
 use std::time::Duration;
-use std::sync::{mpsc, Mutex, Arc};
 
 pub(crate) fn threads() {
     let handle = thread::spawn(|| {
@@ -39,7 +39,7 @@ pub(crate) fn threads() {
     mutex()
 }
 
-fn mutex(){
+fn mutex() {
     let m = Mutex::new(5);
 
     {

@@ -11,10 +11,7 @@ pub(crate) fn pointers() {
     let b = Box::new(5);
     println!("b = {}", b);
 
-    let list = Cons(1,
-                    Box::new(Cons(2,
-                                  Box::new(Cons(3,
-                                                Box::new(Nil))))));
+    let list = Cons(1, Box::new(Cons(2, Box::new(Cons(3, Box::new(Nil))))));
     println!("list: {:?}", list);
 
     let x = 5;
@@ -23,11 +20,17 @@ pub(crate) fn pointers() {
     assert_eq!(5, x);
     assert_eq!(5, *y);
 
-    let c = CustomSmartPointer { data: String::from("my stuff") };
-    let d = CustomSmartPointer { data: String::from("other stuff") };
+    let c = CustomSmartPointer {
+        data: String::from("my stuff"),
+    };
+    let d = CustomSmartPointer {
+        data: String::from("other stuff"),
+    };
     println!("CustomSmartPointers created: {}, {}", c, d);
 
-    let c = CustomSmartPointer { data: String::from("some data") };
+    let c = CustomSmartPointer {
+        data: String::from("some data"),
+    };
     println!("CustomSmartPointer created.");
     drop(c);
     println!("CustomSmartPointer dropped before the end of main.");

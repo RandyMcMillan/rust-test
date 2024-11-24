@@ -4,11 +4,12 @@ pub(crate) fn notification() {
     let bundle = get_bundle_identifier_or_default("com.richodemus.rust.test");
     println!("Bundle: {:?}", bundle);
     set_application(&bundle).unwrap();
-    send_notification("Danger",
-                      &Some("Will Robinson"),
-                      "Run away as fast as you can",
-                      &Some("Blow")
+    send_notification(
+        "Danger",
+        &Some("Will Robinson"),
+        "Run away as fast as you can",
+        &Some("Blow"),
     )
-        .unwrap();
-//    send_notification("NOW", &None, "Without subtitle", &Some("Submarine")).unwrap();
+    .unwrap();
+    //    send_notification("NOW", &None, "Without subtitle", &Some("Submarine")).unwrap();
 }

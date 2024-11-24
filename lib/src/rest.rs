@@ -5,26 +5,27 @@ use serde::{Deserialize, Serialize};
 //use serde_json::{Result, Value};
 
 pub(crate) fn rest() {
-//    let request_url = format!("https://api.github.com/repos/{owner}/{repo}/stargazers",
-//                              owner = "rust-lang-nursery",
-//                              repo = "rust-cookbook");
+    //    let request_url = format!("https://api.github.com/repos/{owner}/{repo}/stargazers",
+    //                              owner = "rust-lang-nursery",
+    //                              repo = "rust-cookbook");
     let request_url = "https://jsonplaceholder.typicode.com/todos/1";
-//    println!("{}", request_url);
+    //    println!("{}", request_url);
     let mut response = reqwest::get(request_url).unwrap();
 
-//    println!("resp: {:?}", response);
+    //    println!("resp: {:?}", response);
     let json = response.json::<User>().unwrap();
     println!("json: {:?}", json);
 
-//    let users: Vec<User> = response.json()?;
-//    println!("{:?}", users);
-//    Ok(())
+    //    let users: Vec<User> = response.json()?;
+    //    println!("{:?}", users);
+    //    Ok(())
 
     let request_url = "https://jsonplaceholder.typicode.com/photos";
     let mut response = reqwest::get(request_url).unwrap();
     let json = response.json::<Vec<Photo>>().unwrap();
     println!("{} photos", json.len());
-    let titles = json.iter()
+    let titles = json
+        .iter()
         .map(|photo| &photo.title)
         .collect::<Vec<&String>>();
     println!("titles: {:?}", titles)
@@ -49,4 +50,3 @@ struct Photo {
     #[serde(rename = "thumbnailUrl")]
     thumbnail_url: String,
 }
-
