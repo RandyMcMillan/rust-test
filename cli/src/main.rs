@@ -30,6 +30,7 @@ fn main() {
         .subcommand(SubCommand::with_name("either"))
         .subcommand(SubCommand::with_name("expressions"))
         .subcommand(SubCommand::with_name("fibonacci"))
+        .subcommand(SubCommand::with_name("fibonacci_u128"))
         .subcommand(SubCommand::with_name("guess"))
         .subcommand(SubCommand::with_name("json"))
         .subcommand(SubCommand::with_name("lifetimes"))

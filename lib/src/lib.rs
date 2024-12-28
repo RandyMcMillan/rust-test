@@ -4,6 +4,7 @@ use concurrency::threads::threads;
 use either::either_usage::either;
 use expressions::expressions;
 use fibonacci::fibonacci;
+use fibonacci_u128::fibonacci_u128;
 use guess::guess;
 use json::json;
 use lifetimes::lifetimes;
@@ -28,6 +29,7 @@ mod concurrency;
 mod either;
 mod expressions;
 mod fibonacci;
+mod fibonacci_u128;
 mod guess;
 mod json;
 mod lifetimes;
@@ -64,6 +66,7 @@ pub fn run(name: &str) {
         "expressions" => expressions(),
         "loops" => loops(),
         "fibonacci" => fibonacci(),
+        "fibonacci_u128" => fibonacci_u128(),
         "ownership" => ownership(),
         "slice" => slice(),
         "rectangle" => structs_rectangle(),
